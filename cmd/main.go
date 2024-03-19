@@ -17,7 +17,7 @@ const (
 func main() {
 	app := echo.New()
 
-	app.Static("/", "assets")
+	app.Static("/static/", "assets")
 
 	app.HTTPErrorHandler = handlers.CustomHTTPErrorHandler
 
