@@ -8,10 +8,12 @@ func NewUserServices(u User /*uStore db.Store*/) *UserServices {
 }
 
 type User struct {
-	ID       int    `json:"id"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Username string `json:"username"`
+	ID        int    `json:"id"`
+	Firstname string `json:"firstname"`
+	Lastname  string `json:"lastname"`
+	Email     string `json:"email"`
+	Password  string `json:"password"`
+	Username  string `json:"username"`
 }
 
 type UserServices struct {

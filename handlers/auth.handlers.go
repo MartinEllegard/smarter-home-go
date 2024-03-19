@@ -64,9 +64,11 @@ func (ah *AuthHandler) registerHandler(c echo.Context) error {
 
 	if c.Request().Method == "POST" {
 		user := services.User{
-			Email:    c.FormValue("email"),
-			Password: c.FormValue("password"),
-			Username: c.FormValue("username"),
+			Firstname: c.FormValue("firstname"),
+			Lastname:  c.FormValue("firstname"),
+			Email:     c.FormValue("email"),
+			Password:  c.FormValue("password"),
+			Username:  c.FormValue("username"),
 		}
 
 		err := ah.UserServices.CreateUser(user)

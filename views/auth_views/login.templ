@@ -9,22 +9,22 @@ templ Login(fromProtected bool) {
 				Log In
 			</h1>
 			<form
- 				hx-swap="transition:true"
- 				hx-headers="js:{'X-TimeZone': Intl.DateTimeFormat().resolvedOptions().timeZone}"
- 				class="rounded-xl drop-shadow-xl flex flex-col gap-4 w-96 p-8"
- 				action=""
- 				method="post"
+				hx-swap="transition:true"
+				hx-headers="js:{'X-TimeZone': Intl.DateTimeFormat().resolvedOptions().timeZone}"
+				class="rounded-xl drop-shadow-xl flex flex-col gap-4 w-96 p-8"
+				action=""
+				method="post"
 			>
 				<label class="flex flex-col justify-start gap-2">
 					Email:
 					<input
- 						class="input input-bordered input-primary bg-slate-800"
- 						type="email"
- 						name="email"
- 						required
- 						autofocus
- 						disabled?={ fromProtected }
- 						if fromProtected {
+						class="input input-bordered input-primary bg-slate-800"
+						type="email"
+						name="email"
+						required
+						autofocus
+						disabled?={ fromProtected }
+						if fromProtected {
 							value="disabled"
 						}
 					/>
@@ -32,13 +32,13 @@ templ Login(fromProtected bool) {
 				<label class="flex flex-col justify-start gap-2">
 					Password:
 					<input
- 						class="input input-bordered input-primary bg-slate-800"
- 						type="password"
- 						name="password"
- 						required
- 						minlength="6"
- 						disabled?={ fromProtected }
- 						if fromProtected {
+						class="input input-bordered input-primary bg-slate-800"
+						type="password"
+						name="password"
+						required
+						minlength="6"
+						disabled?={ fromProtected }
+						if fromProtected {
 							value="disabled"
 						}
 					/>
@@ -54,13 +54,13 @@ templ Login(fromProtected bool) {
 }
 
 templ LoginIndex(
-    title,
-    username string,
-    fromProtected bool,
-    isError bool,
+	title,
+	username string,
+	fromProtected bool,
+	isError bool,
 	errMsgs, sucMsgs []string,
-    cmp templ.Component,
-    ) {
+	cmp templ.Component,
+) {
 	@layout.Base(title, username, fromProtected, isError, errMsgs, sucMsgs) {
 		@cmp
 	}
